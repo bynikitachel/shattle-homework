@@ -17,7 +17,7 @@ let digitalRoot = (num) => {
     if (result.length > 1) {
         return digitalRoot(result);
     } else {
-        console.log({ result })
+        console.log(result)
     }
 }
 digitalRoot('9999999');

@@ -3,7 +3,7 @@
 
 console.log('---------------------- Task 2.8 --------------------------');
 let digitalRoot = (num) => {
-    let arrNums = num.split('');;
+    let arrNums = num.split('');
     let sum = 0;
     for (i = 0; i < arrNums.length; i++) {
         sum += +arrNums[i];

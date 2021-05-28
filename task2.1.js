@@ -4,9 +4,10 @@
 console.log('---------------------- Task 2.1 --------------------------');
 let min = (a, b) => {
     if (a < b) {
-        console.log('', a, '<', b, '  a =', a);
+        return a;
     } else {
-        console.log('', a, '>', b, '  b =', b);
+        return b;
     }
 }
-min(6, 5);
+let minNum = min(6, 5);
+console.log(minNum);

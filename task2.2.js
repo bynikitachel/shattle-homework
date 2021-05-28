@@ -9,9 +9,10 @@ let pow = (x, n) => {
         for (i = 0; i < n - 1; i++) {
             result *= x;
         }
-        console.log('x**n =', result);
+        return result;
     } else {
-        console.log('n not integer or less than 1');
+        return 'n not integer or less than 1';
     }
 }
-pow(3, 6);
+let powNum = pow(3, 6);
+console.log(powNum);

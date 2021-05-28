@@ -11,7 +11,7 @@
 
 console.log('---------------------- Task 2.7 --------------------------');
 let transformArray = (arr, index1, index2, adding) => {
-    arrFourth = arr[index1];
+    let arrFourth = arr[index1];
     arr[index1] = arr[index2];
     arr[index2] = arrFourth;
     for (i = 0; i < arr.length; i++) {

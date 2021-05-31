@@ -32,30 +32,17 @@ let showMessage = (text, background, marginTop, marginLeft) => {
     div.style.marginTop = marginTop + 'px';
     div.style.marginLeft = marginLeft + 'px';
     div.style.padding = '5px';
+    let k = document.querySelectorAll('.message');
+    let i = 0;
+    while (i < k.length) {
+        if (i === 0) {
+            marginLeft = 50;
+        } else if (marginLeft === k[i].marginLeft) {
+            marginLeft += 25;
+        }
+    }
     document.body.append(div);
 
-    let k = document.querySelectorAll('.message');
-    console.log(k);
-    let firstDiv = document.querySelector('#1');
-    if (k.length === 1) {
-        div.id = '1';
-    } else if (k.length === 2) {
-        div.id = '2';
-        let secondDiv = document.querySelector('#2');
-        replaceMessage(secondDiv);
-    } else if (k.length === 3) {
-        div.id = '3';
-    }
-    // replaceMessage();
-    // let replaceMessage = (item) => {
-    //     firstDiv.
-    //     }
-    // let firstDiv = document.querySelector('#1');
-    // let secondDiv = document.querySelector('#2');
-    // let thirdDiv = document.querySelector('#3');
-    // if (secondDiv.marginLeft === firstDiv.marginLeft) {
-    //     secondDiv.marginLeft += '25px';
-    // }
     if (k.length > 3) {
         let removed = document.querySelector('.message');
         removed.remove();

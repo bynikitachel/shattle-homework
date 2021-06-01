@@ -44,8 +44,7 @@ let arr = document.querySelectorAll('.img');
 console.log(arr)
 for (i = 0; i < arr.length; i++) {
     console.log(arr[i]);
-    arr.addEventListener('click', function() {
-
-        console.log(arr[i].getAttribute('src'));
+    arr[i].addEventListener('click', function(e) {
+        console.log(e.target.getAttribute('src'));
     })
 }

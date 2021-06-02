@@ -45,6 +45,6 @@ console.log(arr)
 for (i = 0; i < arr.length; i++) {
     console.log(arr[i]);
     arr[i].addEventListener('click', function(e) {
-        console.log(e.target.getAttribute('src'));
+        alert(e.target.getAttribute('src'));
     })
 }

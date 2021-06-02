@@ -9,39 +9,30 @@ let arrrr = [];
 let sum = 0;
 while (i < 5) {
     numbers[i] = prompt('Input number');
-    // numbers[i] = +numbers[i];
-    // if (i === 0) {
-    //     arrr.push(numbers[0])
-    // } else {
-    //     arr += numbers[i];
-    //     arrr.push(arr + numbers[i - 1])
-    // }
     arr.push(numbers[i]);
-    console.log(arr);
-
+    // console.log(sum);
     let add = (x) => {
-
-
-        // x = +x;
-        // arr += x;
-        for (j = 0; j < x.length; j++) {
-            if (j === 0) {
-                sum += +x[i]
-                arrr.push(sum)
-            } else {
-                sum += +x[i] + +x[i - j];
-                arrr.push(sum)
+        if (i === 0) {
+            sum = +x[0];
+            arrr.push(sum);
+            console.log('arrr=', arrr);
+        } else {
+            for (let j = 0; j < i - 1; j++) {
+                console.log('arrr[j] =', arrr[j]);
+                console.log('sum =', sum);
+                sum += +arrr[j];
+                console.log('sum =', sum);
 
             }
-
+            sum += +x[i];
+            arrr.push(sum);
+            console.log('arrr=', arrr);
         }
-        console.log(arrr);
-        // const li1 = document.createElement('li');
-        // li1.innerHTML = arr;
-        // ul1.append(li1);
+        const li1 = document.createElement('li');
+        li1.innerHTML = arrr[i];
+        ul1.append(li1);
     }
     add(arr);
     i++;
 }
-console.log(arrr);
-console.log(arr);
+// console.log(arrr);

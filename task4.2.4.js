@@ -7,10 +7,8 @@ let arr = [];
 let arrr = [];
 let arrrr = [];
 let sum = 0;
-while (i < 5) {
-    numbers[i] = prompt('Input number');
-    arr.push(numbers[i]);
-    // console.log(sum);
+let input = (value) => {
+    arr.push(value);
     let add = (x) => {
         if (i === 0) {
             sum = +x[0];
@@ -22,7 +20,6 @@ while (i < 5) {
                 console.log('sum =', sum);
                 sum += +arrr[j];
                 console.log('sum =', sum);
-
             }
             sum += +x[i];
             arrr.push(sum);
@@ -33,6 +30,17 @@ while (i < 5) {
         ul1.append(li1);
     }
     add(arr);
+}
+
+while (true) {
+    numbers[i] = prompt('Input number');
+    console.log(numbers[i]);
+    console.log(typeof numbers[i]);
+    if (numbers[i] === '' || isNaN(numbers[i]) || numbers[i] === null) {
+        console.log('error');
+        break;
+    } else {
+        input(numbers[i]);
+    }
     i++;
 }
-// console.log(arrr);

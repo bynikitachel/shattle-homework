@@ -14,40 +14,37 @@ form.append(formSurname);
 let button = document.createElement('button');
 button.innerHTML = 'Submit';
 form.append(button);
+let ol = document.createElement('ol');
+form.append(ol);
 let names = [];
 button.addEventListener('click', function(event) {
     event.preventDefault();
     names.push(form.elements.formName.value + ',' + form.elements.formSurname.value);
-    console.log('array of names', names)
+    let li = document.createElement('li');
+    li.display = 'block';
     let del = document.createElement('button');
     del.innerHTML = 'Delete';
     del.classList = 'delete';
     del.type = 'button';
-    // del.style.visibility = 'visible';
-    if (document.querySelector('.delete')) {} else {
-        // del.style.display = 'inline-block';
-        form.append(del);
+    let removed;
+    for (let i = 0; i < names.length; i++) {
+        li.innerHTML = names[i];
+        li.classList = 'class' + i;
+        removed = i;
+        ol.append(li);
+        li.append(del);
     }
+    // debugger
     del.addEventListener('click', function() {
         // event.preventDefault();
-        let neww;
-        if (names.length > 0) {
-            let lastName = names[names.length - 1].split(',');
-            neww = names.splice(names.length - 1, 1);
-            console.log('new array of names', names);
-            form.elements.formName.value = lastName[0];
-            form.elements.formSurname.value = lastName[1];
-            console.log(lastName);
-        } else {
-            console.log('stop click Delete')
-        }
-        //тут я хотел скрыть кнопку, но потом снова ее показать уже не получается
-
-        // if (names.length === 0) {
-        //     console.log(names.length);
-        //     del.style.display = 'none';
-        //     del.style.visibility = 'hidden';
-        // }
+        let liDel = document.querySelector('.class' + removed);
+        liDel.remove();
+        let lastName = names[removed].split(',');
+        console.log('new array of names', names);
+        form.elements.formName.value = lastName[0];
+        form.elements.formSurname.value = lastName[1];
+        console.log(lastName);
     })
+    console.log('array of names', names)
     form.reset();
 })

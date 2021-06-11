@@ -21,10 +21,8 @@ button.addEventListener('click', function(event) {
     event.preventDefault();
     names.push(form.elements.formName.value + ',' + form.elements.formSurname.value);
     let li = document.createElement('li');
-    li.display = 'block';
     let del = document.createElement('button');
     del.innerHTML = 'Delete';
-    del.classList = 'delete';
     del.type = 'button';
     let removed;
     for (let i = 0; i < names.length; i++) {
@@ -34,9 +32,7 @@ button.addEventListener('click', function(event) {
         ol.append(li);
         li.append(del);
     }
-    // debugger
     del.addEventListener('click', function() {
-        // event.preventDefault();
         let liDel = document.querySelector('.class' + removed);
         liDel.remove();
         let lastName = names[removed].split(',');

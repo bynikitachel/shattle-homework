@@ -6,15 +6,15 @@
 
 let selfGeneratedUser = {
     getInfo: function() {
-        selfGeneratedUser.name = prompt('input your name');
-        selfGeneratedUser.email = prompt('input your email');
-        selfGeneratedUser.phone = prompt('input your phone');
+        this.name = prompt('input your name');
+        this.email = prompt('input your email');
+        this.phone = prompt('input your phone');
     },
     introduce: function() {
-        for (let key in selfGeneratedUser) {
+        for (let key in this) {
             console.log(key);
-            if (key == 'getInfo' || key == 'introduce' || selfGeneratedUser[key] === null || selfGeneratedUser[key] === '') {} else {
-                alert(key + '=' + selfGeneratedUser[key]);
+            if (key == 'getInfo' || key == 'introduce' || this[key] === null || this[key] === '') {} else {
+                alert(key + '=' + this[key]);
             }
         }
     }

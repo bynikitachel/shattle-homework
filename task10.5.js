@@ -5,13 +5,11 @@
 // console.log(rectangle.getArea());   // => 200
 
 let rectangle = {
-    height: '',
-    width: '',
-    getArea: function(x, y) {
-        rectangle.height = x;
-        rectangle.width = y;
+    height: 5,
+    width: 8,
+    getArea: function() {
         return rectangle.height * rectangle.width;
     }
 }
-let result = rectangle.getArea(5, 8);
+let result = rectangle.getArea();
 console.log(result);
